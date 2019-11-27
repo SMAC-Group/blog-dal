@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1574861252668.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5C6B0A3E",
+    "lastKnownWriteTime" : 1574860495,
+    "last_content_update" : 1574860495,
+    "path" : "~/Github/SMAC-Group/blog-dal/content/posts/asymptotics1.md",
+    "project_path" : "content/posts/asymptotics1.md",
+    "properties" : {
+        "cursorPosition" : "4,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}
