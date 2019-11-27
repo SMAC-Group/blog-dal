@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1574851542684.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F1EDE0C7",
+    "lastKnownWriteTime" : 1574848056,
+    "last_content_update" : 1574848056,
+    "path" : "~/Github/SMAC-Group/blog-dal/config/_default/menus.en.toml",
+    "project_path" : "config/_default/menus.en.toml",
+    "properties" : {
+        "cursorPosition" : "18,0",
+        "scrollLine" : "1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "toml"
+}

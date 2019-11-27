@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1574853245997.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "BB3F7D1D",
+    "lastKnownWriteTime" : 1574851632,
+    "last_content_update" : 1574851632,
+    "path" : "~/Github/SMAC-Group/blog-dal/content/posts/markdown-syntax.md",
+    "project_path" : "content/posts/markdown-syntax.md",
+    "properties" : {
+        "cursorPosition" : "47,14",
+        "scrollLine" : "39"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}

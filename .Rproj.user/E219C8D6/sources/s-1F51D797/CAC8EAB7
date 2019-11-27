@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1574853693066.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CAC8EAB7",
+    "lastKnownWriteTime" : 1574846983,
+    "last_content_update" : 1574846983,
+    "path" : "~/Github/SMAC-Group/blog-dal/themes/zzo/exampleSite/content/posts/rich-content.md",
+    "project_path" : "themes/zzo/exampleSite/content/posts/rich-content.md",
+    "properties" : {
+        "cursorPosition" : "16,26",
+        "scrollLine" : "13"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}
