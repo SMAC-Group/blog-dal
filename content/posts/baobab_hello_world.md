@@ -124,9 +124,9 @@ sbatch launch_simu.sh
 # Useful ressources
 
  * [What is Baobab](https://plone.unige.ch/distic/pub/hpc/baobab_en)
-  * [Baobab Documentation](https://baobab.unige.ch/enduser/enduser.html)
-  * [Slurm Documentation](https://slurm.schedmd.com/)
-  * [Slurm Scheduling for Optimal Responsiveness and Utilization](https://slurm.schedmd.com/SUG14/sched_tutorial.pdf)
+ * [Baobab Documentation](https://baobab.unige.ch/enduser/enduser.html)
+ * [Slurm Documentation](https://slurm.schedmd.com/)
+ * [Slurm Scheduling for Optimal Responsiveness and Utilization](https://slurm.schedmd.com/SUG14/sched_tutorial.pdf)
 
 
 

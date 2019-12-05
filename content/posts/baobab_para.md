@@ -13,7 +13,7 @@ Researchers at the University of Geneva may request access and use the high-perf
 However, the documentation already provided can be challenging to grasp for a new user. The aim of this tutorial is therefore to provide a clear and concise introduction to the use of the HPC Cluster Baobab.
 
 # Parallelisation and optimal scheduling
-The `bash` script discussed in the previous tutorial run the `R` script written below on one CPU in one node. There is therefore no parallelisation of the code. However, when each iteration on a given programm are independant, one can parallelise the code such that the run time is reduced. We will in this tutorial discuss both the notion of command parallelisation and parallelisation via slurm, how one should modify both scripts based on the type of parallelisation and how the code will be executed on Baobab.
+The `bash` script discussed in the previous tutorial run the `R` script written below on one CPU in one node. There is therefore no parallelisation of the code. However, when each iteration on a given programm are independant, one can parallelise the code such that the run time is reduced. We will in this tutorial discuss both the notion of command parallelisation and parallelisation via `slurm`, how one should modify both scripts based on the type of parallelisation and how the code will be executed on Baobab.
 
 ## Command parallelisation
 One can parallelise his code by distributing calculations of independant iterations over `n` CPU in the same node. This is called command parallelisation. In order to do such, one must change both the `bash` and the `R` code. With reference to the codes presented in the tutorial "Baobab Hello World" ([here](https://blog-dal.netlify.com/posts/baobab_hello_world/)), one must change both codes as such to parallelise the `R` code on `n` CPU. We will here consider `n` as 8. The `bash` code would therefore be written as such:
@@ -74,8 +74,6 @@ save(myresults, "xbar_simulation_results.rda")
 
 ## Notes on optimal scheduling with `slurm`
 
-SLURM
-
  * Define `--time` at minimum considering the time required by your task. One can run a small number of iterations of a given task to get an estimate of the time required to run a simulation. 
  * You can list partitions in the parameter `--partition` such that your task has a higher probability of being executed earlier (i.e. `#SBATCH --partition=mono-EL7,parallel-EL7,bigmem-EL7,shared-EL7,mono-shared-EL7,shared-bigmem-EL7`).
  * Note that by specifying such a combination of `--ntasks-per-node` and `--cpus-per-task` your task will be executed only when an available node with that ammount of CPU is available (as oposed to parallelisation via `slurm`).
@@ -88,6 +86,6 @@ To be done
 # Useful ressources
 
  * [What is Baobab](https://plone.unige.ch/distic/pub/hpc/baobab_en)
-  * [Baobab Documentation](https://baobab.unige.ch/enduser/enduser.html)
-  * [Slurm Documentation](https://slurm.schedmd.com/)
-  * [Slurm Scheduling for Optimal Responsiveness and Utilization](https://slurm.schedmd.com/SUG14/sched_tutorial.pdf)
+ * [Baobab Documentation](https://baobab.unige.ch/enduser/enduser.html)
+ * [Slurm Documentation](https://slurm.schedmd.com/)
+ * [Slurm Scheduling for Optimal Responsiveness and Utilization](https://slurm.schedmd.com/SUG14/sched_tutorial.pdf)
