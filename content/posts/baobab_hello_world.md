@@ -45,7 +45,7 @@ Before getting interested in how to run tasks on Baobab, it is necessary to defi
 
 # Your first `bash` script to execute a `R` script
 
-In order to launch a given Rscript to be executed on Baobab, one need to execute a BASH script via the command `sbatch`. Let's look at an example of a simple BASH script that launch a given `R` script.
+In order to launch a given Rscript to be executed on Baobab, one need to execute a `bash` script via the command `sbatch`. Let's look at an example of a simple `bash` script that launch a given `R` script.
 
 ```bash
 #!/bin/bash
@@ -64,7 +64,7 @@ OUTFILE=report_simu.Rout
 
 srun R CMD BATCH $INFILE $OUTFILE
 ```
-#### Interpreting the above bash script
+#### Interpreting the above `bash` script
  * The first line is called a shebang or hashbang and indicate to the shell what program to interpret the script with.
  * Lines 2 to 8 are `slurm` command options. Here is a table that present these options.
 
