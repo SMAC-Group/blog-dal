@@ -1,6 +1,6 @@
 ---
 author: "Samuel Orso, Lionel Voirol"
-title: "Baobab Hello World - High Performance Computing"
+title: "High Performance Computing - Baobab Hello World"
 date: 2019-12-04
 description: "Introduction to the use of Baobab HPC cluster for researchers"
 tags: ["computational statistics"]
@@ -55,7 +55,7 @@ In order to launch a given Rscript to be executed on Baobab, one need to execute
 #SBATCH --time=0:15:0
 #SBATCH --partition=debug-EL7
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=Lionel.Voirol@unige.ch
+#SBATCH --mail-user=firstname.lastname@unige.ch
 
 module load GCC/8.2.0-2.31.1 OpenMPI/3.1.3 R/3.6.0
 
@@ -86,7 +86,6 @@ Imagine that you create the following `R` script and want to run it on Baobab:
 
 ```r
 #Load libraries
-library(doParallel)
 library(foreach)
 
 #Simulate population
@@ -97,7 +96,7 @@ pop = rnorm(10e5, mean = mymean, sd = mysd)
 #Define nbr of iterations
 B = 10e3
 samplesize = 100
-myresults = foreach(b = icount(B), .combine = rbind) %dopar%{
+myresults = foreach(b = icount(B), .combine = rbind)%do%{
   mysample = sample(pop, size = samplesize)
   mean(mysample)
 }
@@ -117,25 +116,11 @@ In order to transfer it on your LINUX session, you can either write it on your c
 ```bash
 vim simu.R
 ```
+Once this `R` script is saved on your LINUX session as `simu.R`, you can then run it on Baobab by running the previously discussed `bash` script. Assuming that you save the above `bash` script as `launch_simu.sh`, you can launch the job with the following command. 
 
-Once this `R` script is saved on your LINUX session as `simu.R`, you can then run it on Baobab by running the previously discussed `bash` script. Assuming that you save the above `bash` script as `launch_simu.sh`, you can launch the job with the following command.  
 ```bash
 sbatch launch_simu.sh
 ```
-
-# Parallelisation and optimal scheduling
-The `bash` script discussed above run the `R` script written below on one CPU in one node. There is therefore no parallelisation of the code. However, when each iteration on a given programm are independant, one can paralellise the code such that the run time is reduced. We will in this tutorial discuss both the notion of command parallelisation and parallelisation via slurm, how one should modify both scripts based on the type of parallelisation and how the code will be executed on Baobab.
-
-## Command parallelisation
-
-## Parallelisation via Slurm
-
-To be done
-
-# Installing R packages
-
-To be done
-
 # Useful ressources
 
  * [What is Baobab](https://plone.unige.ch/distic/pub/hpc/baobab_en)
