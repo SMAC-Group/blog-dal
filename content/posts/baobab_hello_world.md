@@ -10,7 +10,7 @@ featured_image: "baobab.jpg"
 
 # Motivation & Introduction
 Researchers at the University of Geneva may request access and use the high-performance computing (HPC) server of the University of Geneva, Baobab. This cluster is particularly well suited for massive parallel computations. There exist already different ressources to help the user that are listed at the end of this tutorial.
-However, the documentation already provided can be challenging to grasp for a first use or a new user. The aim of this tutorial is therefore to provide an clear and concise introduction to the use of the HPC Cluster Baobab.
+However, the documentation already provided can be challenging to grasp for a new user. The aim of this tutorial is therefore to provide a clear and concise introduction to the use of the HPC Cluster Baobab.
 
 Before getting interested in how to run tasks on Baobab, it is necessary to define some notions and install some applications. 
 
