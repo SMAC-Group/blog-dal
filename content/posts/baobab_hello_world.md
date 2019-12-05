@@ -44,7 +44,7 @@ rm file               delete a file
  * [What is Baobab](https://plone.unige.ch/distic/pub/hpc/baobab_en)
   * [Baobab Documentation](https://baobab.unige.ch/enduser/enduser.html)
   * [Slurm Documentation](https://slurm.schedmd.com/)
-  * [SchedMD LLChttp://www.schedmd.comTuning Slurm Scheduling for Optimal Responsiveness and Utilization](https://slurm.schedmd.com/SUG14/sched_tutorial.pdf)
+  * [Slurm Scheduling for Optimal Responsiveness and Utilization](https://slurm.schedmd.com/SUG14/sched_tutorial.pdf)
 
 
 
