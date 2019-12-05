@@ -2,7 +2,7 @@
 author: "Stephane Guerrier, Mucyo Karemera, Samuel Orso"
 title: "Post-doc presentation"
 date: 2019-12-04
-description: "Slides and some comments about the first class on asymptotics"
+description: "Slides from the post-docs' presentation"
 tags: ["research group", "presentation"]
 categories: ["research group meeting"]
 featured_image: "presentation.png"
