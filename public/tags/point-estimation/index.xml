@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>point estimation on Hugo Zzo Theme</title>
+    <link>http://example.org/tags/point-estimation/</link>
+    <description>Recent content in point estimation on Hugo Zzo Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Wed, 27 Nov 2019 12:13:57 +0100</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/point-estimation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A first class on asymptotics</title>
+      <link>http://example.org/posts/asymptotics1/</link>
+      <pubDate>Wed, 27 Nov 2019 12:13:57 +0100</pubDate>
+      
+      <guid>http://example.org/posts/asymptotics1/</guid>
+      <description>Hi everyone,
+Here’s the slides from the asymptotic course with some typo corrected. Also check out this video on the Hilbert’s hotel paradox we’ve mentioned today. Infinity is crazy, enjoy :) :   Wish you all a nice evening!</description>
+    </item>
+    
+  </channel>
+</rss>

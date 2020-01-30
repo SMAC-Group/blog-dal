@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>computational statistics on Hugo Zzo Theme</title>
+    <link>http://example.org/tags/computational-statistics/</link>
+    <description>Recent content in computational statistics on Hugo Zzo Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 05 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/computational-statistics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>High Performance Computing - Parallel computing on Baobab</title>
+      <link>http://example.org/posts/baobab_para/</link>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/baobab_para/</guid>
+      <description>Motivation &amp;amp; Introduction Researchers at the University of Geneva may request access and use the high-performance computing (HPC) server of the University of Geneva, Baobab. This cluster is particularly well suited for massive parallel computations. There exist already different ressources to help the user that are listed at the end of this tutorial. However, the documentation already provided can be challenging to grasp for a new user. The aim of this tutorial is therefore to provide a clear and concise introduction to the use of the HPC Cluster Baobab.</description>
+    </item>
+    
+    <item>
+      <title>High Performance Computing - Baobab Hello World</title>
+      <link>http://example.org/posts/baobab_hello_world/</link>
+      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/baobab_hello_world/</guid>
+      <description>Motivation &amp;amp; Introduction Researchers at the University of Geneva may request access and use the high-performance computing (HPC) server of the University of Geneva, Baobab. This cluster is particularly well suited for massive parallel computations. There exist already different ressources to help the user that are listed at the end of this tutorial. However, the documentation already provided can be challenging to grasp for a new user. The aim of this tutorial is therefore to provide a clear and concise introduction to the use of the HPC Cluster Baobab.</description>
+    </item>
+    
+  </channel>
+</rss>

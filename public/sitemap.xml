@@ -4,18 +4,111 @@
   
   <url>
     <loc>http://example.org/categories/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/computational-statistics/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/baobab_para/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://example.org/</loc>
-  </url>
-  
-  <url>
-    <loc>http://example.org/series/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://example.org/tags/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/tutorial/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/baobab_hello_world/</loc>
+    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/pres1/</loc>
+    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/presentation/</loc>
+    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/research-group/</loc>
+    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/research-group-meeting/</loc>
+    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/agenda/</loc>
+    <lastmod>2019-11-27T14:27:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/agenda_class/</loc>
+    <lastmod>2019-11-27T14:27:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/asymptotic-theory/</loc>
+    <lastmod>2019-11-27T14:27:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/course/</loc>
+    <lastmod>2019-11-27T14:27:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/asymptotics1/</loc>
+    <lastmod>2019-11-27T12:13:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/large-sample/</loc>
+    <lastmod>2019-11-27T12:13:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/point-estimation/</loc>
+    <lastmod>2019-11-27T12:13:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/</loc>
+    <lastmod>2019-11-27T11:40:25+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/archive/</loc>
+    <lastmod>2019-11-27T11:39:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/about/</loc>
+    <lastmod>2019-11-27T11:35:34+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/series/</loc>
   </url>
   
 </urlset>

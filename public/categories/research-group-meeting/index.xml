@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>research group meeting on Hugo Zzo Theme</title>
+    <link>http://example.org/categories/research-group-meeting/</link>
+    <description>Recent content in research group meeting on Hugo Zzo Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Wed, 04 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/categories/research-group-meeting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Post-doc presentation</title>
+      <link>http://example.org/posts/pres1/</link>
+      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/pres1/</guid>
+      <description>Hi everyone,
+We hope you enjoyed our presentation yesterday. You can find Mucyo&amp;rsquo; presentation here and Sam&#39;s here
+We are looking forward to see PhD&#39;s presentations next week 😄</description>
+    </item>
+    
+    <item>
+      <title>Agenda for research group meetings</title>
+      <link>http://example.org/posts/agenda_class/</link>
+      <pubDate>Wed, 27 Nov 2019 14:27:58 +0100</pubDate>
+      
+      <guid>http://example.org/posts/agenda_class/</guid>
+      <description>Here&#39;s our next meetings:
+   Date Time Room Content     10 Dec 2019 2:15pm to 4pm 3220 presentation by PhD student   3 Dec 2019 2:15pm to 4pm 3220 presentation by a group member   26 Nov 2019 2:15pm to 4pm 3220 presentation by a group member    </description>
+    </item>
+    
+  </channel>
+</rss>

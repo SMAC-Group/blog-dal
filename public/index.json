@@ -9,6 +9,24 @@
 	"content": ""
 },
 {
+	"uri": "http://example.org/tags/computational-statistics/",
+	"title": "computational statistics",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://example.org/posts/baobab_para/",
+	"title": "High Performance Computing - Parallel computing on Baobab",
+	"tags": ["computational statistics"],
+	"categories": [],
+	"series": [],
+	"description": "Parallel computing in Baobab HPC cluster for researchers",
+	"content": "Motivation \u0026amp; Introduction Researchers at the University of Geneva may request access and use the high-performance computing (HPC) server of the University of Geneva, Baobab. This cluster is particularly well suited for massive parallel computations. There exist already different ressources to help the user that are listed at the end of this tutorial. However, the documentation already provided can be challenging to grasp for a new user. The aim of this tutorial is therefore to provide a clear and concise introduction to the use of the HPC Cluster Baobab.\nParallelisation and optimal scheduling The bash script discussed in the previous tutorial \u0026ldquo;Baobab Hello World\u0026rdquo; (here) run the R script written below on one CPU in one node. There is therefore no parallelisation of the code. However, when each iteration on a given programm are independant, one can parallelise the code such that the run time is reduced. We will in this tutorial discuss both the notion of command parallelisation and parallelisation via slurm, how one should modify both scripts based on the type of parallelisation and how the code will be executed on Baobab.\nCommand parallelisation One can parallelise his code by distributing calculations of independant iterations over n CPU in the same node. This is called command parallelisation. In order to do such, one must change both the bash and the R code. With reference to the codes presented in the tutorial \u0026ldquo;Baobab Hello World\u0026rdquo;, one must change both codes as such to parallelise the R code on n CPU. We will here consider n as 8. The bash code would therefore be written as such:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  #!/bin/bash\r#SBATCH --job-name=simu_R\r#SBATCH --ntasks-per-node=1\r#SBATCH --cpus-per-task=8\r#SBATCH --time=0:15:0\r#SBATCH --partition=debug-EL7\r#SBATCH --mail-type=ALL\r#SBATCH --mail-user=firstname.lastname@unige.ch\rmodule load GCC/8.2.0-2.31.1 OpenMPI/3.1.3 R/3.6.0\rINFILE=simu.R\rOUTFILE=report_simu.Rout\rsrun R CMD BATCH $INFILE $OUTFILE\r  The R code would be written as such, using the %dopar% operator instead of %do%\u0026quot; and importing library doParallel:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32  #Load libraries\r library(foreach)\rlibrary(doParallel)\r# set the number of cores in the sbatch script\r registerDoParallel(cores=Sys.getenv(\u0026#34;SLURM_CPUS_PER_TASK\u0026#34;))\r# print the number of workers\r getDoParWorkers()\r#Simulate population\r mysd = 15\rmymean = 50\rpop = rnorm(10e5, mean = mymean, sd = mysd)\r#Define nbr of iterations\r B = 10e3\rsamplesize = 100\rmyresults = foreach(b = icount(B), .combine = rbind)%dopar%{\rmysample = sample(pop, size = samplesize)\rmean(mysample)\r}\r#Theoretical xbar variance\r mysd^2 / samplesize\r#Observed xbar variance\r var(myresults[,1])\r#Save results\r save(myresults, \u0026#34;xbar_simulation_results.rda\u0026#34;)\r  Notes on optimal scheduling with slurm  Define --time at minimum considering the time required by your task. One can run a small number of iterations of a given task to get an estimate of the time required to run a simulation. You can list partitions in the parameter --partition such that your task has a higher probability of being executed earlier (i.e. #SBATCH --partition=mono-EL7,parallel-EL7,bigmem-EL7,shared-EL7,mono-shared-EL7,shared-bigmem-EL7). Note that by specifying such a combination of --ntasks-per-node and --cpus-per-task your task will be executed only when an available node with that ammount of CPU is available (as oposed to parallelisation via slurm). Be sure to specifiy the correct possible --partition considering the --time parameter indicated and the limitations of each partition. One can find Baobab partitions and limits documentation here.  Parallelisation via slurm To be done\nUseful ressources  What is Baobab Baobab Documentation Slurm Documentation Slurm Scheduling for Optimal Responsiveness and Utilization  "
+},
+{
 	"uri": "http://example.org/",
 	"title": "Hugo Zzo Theme",
 	"tags": [],
@@ -18,8 +36,8 @@
 	"content": ""
 },
 {
-	"uri": "http://example.org/series/",
-	"title": "Series",
+	"uri": "http://example.org/tags/",
+	"title": "Tags",
 	"tags": [],
 	"categories": [],
 	"series": [],
@@ -27,8 +45,152 @@
 	"content": ""
 },
 {
-	"uri": "http://example.org/tags/",
-	"title": "Tags",
+	"uri": "http://example.org/categories/tutorial/",
+	"title": "tutorial",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://example.org/posts/baobab_hello_world/",
+	"title": "High Performance Computing - Baobab Hello World",
+	"tags": ["computational statistics"],
+	"categories": [],
+	"series": [],
+	"description": "Introduction to the use of Baobab HPC cluster for researchers",
+	"content": "Motivation \u0026amp; Introduction Researchers at the University of Geneva may request access and use the high-performance computing (HPC) server of the University of Geneva, Baobab. This cluster is particularly well suited for massive parallel computations. There exist already different ressources to help the user that are listed at the end of this tutorial. However, the documentation already provided can be challenging to grasp for a new user. The aim of this tutorial is therefore to provide a clear and concise introduction to the use of the HPC Cluster Baobab.\nBefore getting interested in how to run tasks on Baobab, it is necessary to define some notions and install some applications.\n The administrative procedure required to get access to Baobab is presented here. Depending on your OS, you may access Baobab and transfer files between your computer and your LINUX session on Baobab using different softwares. Read and install the required softwares here. As indicated above, to work with Baobab, you will be coding instructions on a LINUX command prompt, typing bash commands. We will list in this tutorial the most frequently used bash commands when working with Baobab. Regarding the architecture of Baobab, one must understand that Baobab is composed of different partitions, each partition composed of different nodes, for which, each node is composed of a number of CPU/GPU. One can find further details about partitions and their various limits here . Baobab schedules tasks using slurm cluster management and job scheduling system.  Useful bash commands    Command syntax Description     ls -l list current directory   pwd print working directory   cd ~ navigate to home directory   cd .. navigate up one directory   cp oldfile newfile make a copy of a file   mv oldfile newfile rename a file   rm file delete a file    Useful slurm commands    Command syntax Description     sbatch submit a job script for later execution   scontrol display the slurm state of a given job   scancel cancel a running or pending job   squeue -u username display pending job of username    Your first bash script to execute a R script In order to launch a given Rscript to be executed on Baobab, one need to execute a bash script via the command sbatch. Let's look at an example of a simple bash script that launch a given R script.\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  #!/bin/bash\r#SBATCH --job-name=simu_R\r#SBATCH --ntasks-per-node=1\r#SBATCH --cpus-per-task=1\r#SBATCH --time=0:15:0\r#SBATCH --partition=debug-EL7\r#SBATCH --mail-type=ALL\r#SBATCH --mail-user=firstname.lastname@unige.ch\rmodule load GCC/8.2.0-2.31.1 OpenMPI/3.1.3 R/3.6.0\rINFILE=simu.R\rOUTFILE=report_simu.Rout\rsrun R CMD BATCH $INFILE $OUTFILE\r  Interpreting the above bash script  The first line is called a shebang or hashbang and indicate to the shell what program to interpret the script with. Lines 2 to 8 are slurm command options. Here is a table that present these options.     Command syntax Description     --job-name job name   --ntasks-per-node number of nodes on which to run the job   --cpus-per-task number of CPU required per task   --time wall clock time limit   --partition partition(s) on which to run the job   --mail-type select which event types to notify the user   --mail-type user to receive email notification     line 10 load modules required to run R. line 12 and 13 specify both input and output files. line 15 run launch the execution of the task.  Imagine that you create the following R script and want to run it on Baobab:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  #Load libraries\r library(foreach)\r#Simulate population\r mysd = 15\rmymean = 50\rpop = rnorm(10e5, mean = mymean, sd = mysd)\r#Define nbr of iterations\r B = 10e3\rsamplesize = 100\rmyresults = foreach(b = icount(B), .combine = rbind)%do%{\rmysample = sample(pop, size = samplesize)\rmean(mysample)\r}\r#Theoretical xbar variance\r mysd^2 / samplesize\r#Observed xbar variance\r var(myresults[,1])\r#Save results\r save(myresults, \u0026#34;xbar_simulation_results.rda\u0026#34;)\r  In order to transfer it on your LINUX session, you can either write it on your computer and then transfer it on your LINUX session using for example Filezilla, or you can directly write it on your LINUX session using vim. The following command will create a .R file that you can then edit and save it using vim commands.\n1  vim simu.R\r  Once this R script is saved on your LINUX session as simu.R, you can then run it on Baobab by running the previously discussed bash script. Assuming that you save the above bash script as launch_simu.sh, you can launch the job with the following command.\n1  sbatch launch_simu.sh\r  Useful ressources  What is Baobab Baobab Documentation Slurm Documentation Slurm Scheduling for Optimal Responsiveness and Utilization  "
+},
+{
+	"uri": "http://example.org/posts/pres1/",
+	"title": "Post-doc presentation",
+	"tags": ["research group", "presentation"],
+	"categories": [],
+	"series": [],
+	"description": "Slides from the post-docs&#39; presentation",
+	"content": "Hi everyone,\nWe hope you enjoyed our presentation yesterday. You can find Mucyo\u0026rsquo; presentation here and Sam's here\nWe are looking forward to see PhD's presentations next week 😄\n"
+},
+{
+	"uri": "http://example.org/tags/presentation/",
+	"title": "presentation",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://example.org/tags/research-group/",
+	"title": "research group",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://example.org/categories/research-group-meeting/",
+	"title": "research group meeting",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://example.org/tags/agenda/",
+	"title": "agenda",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://example.org/posts/agenda_class/",
+	"title": "Agenda for research group meetings",
+	"tags": ["agenda", "asymptotic theory", "research group"],
+	"categories": [],
+	"series": [],
+	"description": "When, where and what? Click on this post",
+	"content": "Here's our next meetings:\n   Date Time Room Content     10 Dec 2019 2:15pm to 4pm 3220 presentation by PhD student   3 Dec 2019 2:15pm to 4pm 3220 presentation by a group member   26 Nov 2019 2:15pm to 4pm 3220 presentation by a group member    "
+},
+{
+	"uri": "http://example.org/tags/asymptotic-theory/",
+	"title": "asymptotic theory",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://example.org/categories/course/",
+	"title": "course",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://example.org/posts/asymptotics1/",
+	"title": "A first class on asymptotics",
+	"tags": ["asymptotic theory", "point estimation", "large sample"],
+	"categories": [],
+	"series": [],
+	"description": "Slides and some comments about the first class on asymptotics",
+	"content": "Hi everyone,\nHere’s the slides from the asymptotic course with some typo corrected. Also check out this video on the Hilbert’s hotel paradox we’ve mentioned today. Infinity is crazy, enjoy :) :   Wish you all a nice evening!\n"
+},
+{
+	"uri": "http://example.org/tags/large-sample/",
+	"title": "large sample",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://example.org/tags/point-estimation/",
+	"title": "point estimation",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://example.org/posts/",
+	"title": "Posts",
+	"tags": ["index"],
+	"categories": [],
+	"series": [],
+	"description": "Post page",
+	"content": ""
+},
+{
+	"uri": "http://example.org/archive/",
+	"title": "Archive",
+	"tags": [""],
+	"categories": [],
+	"series": [""],
+	"description": "archive page",
+	"content": ""
+},
+{
+	"uri": "http://example.org/about/",
+	"title": "About",
+	"tags": [""],
+	"categories": [],
+	"series": [""],
+	"description": "",
+	"content": "This website is an attempt for blogging for members of the Data Analyitics Lab at the University of Geneva.\n"
+},
+{
+	"uri": "http://example.org/series/",
+	"title": "Series",
 	"tags": [],
 	"categories": [],
 	"series": [],

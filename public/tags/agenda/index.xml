@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>agenda on Hugo Zzo Theme</title>
+    <link>http://example.org/tags/agenda/</link>
+    <description>Recent content in agenda on Hugo Zzo Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Wed, 27 Nov 2019 14:27:58 +0100</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/agenda/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Agenda for research group meetings</title>
+      <link>http://example.org/posts/agenda_class/</link>
+      <pubDate>Wed, 27 Nov 2019 14:27:58 +0100</pubDate>
+      
+      <guid>http://example.org/posts/agenda_class/</guid>
+      <description>Here&#39;s our next meetings:
+   Date Time Room Content     10 Dec 2019 2:15pm to 4pm 3220 presentation by PhD student   3 Dec 2019 2:15pm to 4pm 3220 presentation by a group member   26 Nov 2019 2:15pm to 4pm 3220 presentation by a group member    </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,9 +6,73 @@
     <description>Recent content in Tags on Hugo Zzo Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 05 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>computational statistics</title>
+      <link>http://example.org/tags/computational-statistics/</link>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/computational-statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>presentation</title>
+      <link>http://example.org/tags/presentation/</link>
+      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/presentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>research group</title>
+      <link>http://example.org/tags/research-group/</link>
+      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/research-group/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>agenda</title>
+      <link>http://example.org/tags/agenda/</link>
+      <pubDate>Wed, 27 Nov 2019 14:27:58 +0100</pubDate>
+      
+      <guid>http://example.org/tags/agenda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>asymptotic theory</title>
+      <link>http://example.org/tags/asymptotic-theory/</link>
+      <pubDate>Wed, 27 Nov 2019 14:27:58 +0100</pubDate>
+      
+      <guid>http://example.org/tags/asymptotic-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>large sample</title>
+      <link>http://example.org/tags/large-sample/</link>
+      <pubDate>Wed, 27 Nov 2019 12:13:57 +0100</pubDate>
+      
+      <guid>http://example.org/tags/large-sample/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>point estimation</title>
+      <link>http://example.org/tags/point-estimation/</link>
+      <pubDate>Wed, 27 Nov 2019 12:13:57 +0100</pubDate>
+      
+      <guid>http://example.org/tags/point-estimation/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

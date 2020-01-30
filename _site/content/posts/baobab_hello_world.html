@@ -1,0 +1,201 @@
+<h1 id="motivation--introduction">Motivation &amp; Introduction</h1>
+<p>Researchers at the University of Geneva may request access and use the high-performance computing (HPC) server of the University of Geneva, Baobab. This cluster is particularly well suited for massive parallel computations. There exist already different ressources to help the user that are listed at the end of this tutorial.
+However, the documentation already provided can be challenging to grasp for a new user. The aim of this tutorial is therefore to provide a clear and concise introduction to the use of the HPC Cluster Baobab.</p>
+
+<p>Before getting interested in how to run tasks on Baobab, it is necessary to define some notions and install some applications.</p>
+
+<ul>
+  <li>The administrative procedure required to get access to Baobab is presented <a href="https://baobab.unige.ch/enduser/src/enduser/access.html#access-baobab">here</a>.</li>
+  <li>Depending on your OS, you may access Baobab and transfer files between your computer and your LINUX session on Baobab using different softwares. Read and install the required softwares <a href="https://baobab.unige.ch/enduser/src/enduser/access.html#access-baobab">here</a>.</li>
+  <li>As indicated above, to work with Baobab, you will be coding instructions on a LINUX command prompt, typing <code class="highlighter-rouge">bash</code> commands. We will list in this tutorial the most frequently used <code class="highlighter-rouge">bash</code> commands when working with Baobab.</li>
+  <li>Regarding the architecture of Baobab, one must understand that Baobab is composed of different partitions, each partition composed of different nodes, for which, each node is composed of a number of CPU/GPU. One can find further details about partitions and their various limits <a href="https://baobab.unige.ch/enduser/src/enduser/enduser.html#">here</a>
+.</li>
+  <li>Baobab schedules tasks using <code class="highlighter-rouge">slurm</code> cluster management and job scheduling system.</li>
+</ul>
+
+<h1 id="useful-bash-commands">Useful <code class="highlighter-rouge">bash</code> commands</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command syntax</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">ls -l</code></td>
+      <td>list current directory</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">pwd</code></td>
+      <td>print working directory</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">cd ~</code></td>
+      <td>navigate to home directory</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">cd ..</code></td>
+      <td>navigate up one directory</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">cp oldfile newfile</code></td>
+      <td>make a copy of a file</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">mv oldfile newfile</code></td>
+      <td>rename a file</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">rm file</code></td>
+      <td>delete a file</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="useful-slurm-commands">Useful <code class="highlighter-rouge">slurm</code> commands</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command syntax</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">sbatch</code></td>
+      <td>submit a job script for later execution</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">scontrol</code></td>
+      <td>display the slurm state of a given job</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">scancel</code></td>
+      <td>cancel a running or pending job</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">squeue -u username</code></td>
+      <td>display pending job of username</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="your-first-bash-script-to-execute-a-r-script">Your first <code class="highlighter-rouge">bash</code> script to execute a <code class="highlighter-rouge">R</code> script</h1>
+
+<p>In order to launch a given Rscript to be executed on Baobab, one need to execute a <code class="highlighter-rouge">bash</code> script via the command <code class="highlighter-rouge">sbatch</code>. Let’s look at an example of a simple <code class="highlighter-rouge">bash</code> script that launch a given <code class="highlighter-rouge">R</code> script.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c">#SBATCH --job-name=simu_R</span>
+<span class="c">#SBATCH --ntasks-per-node=1</span>
+<span class="c">#SBATCH --cpus-per-task=1</span>
+<span class="c">#SBATCH --time=0:15:0</span>
+<span class="c">#SBATCH --partition=debug-EL7</span>
+<span class="c">#SBATCH --mail-type=ALL</span>
+<span class="c">#SBATCH --mail-user=firstname.lastname@unige.ch</span>
+
+module load GCC/8.2.0-2.31.1 OpenMPI/3.1.3 R/3.6.0
+
+<span class="nv">INFILE</span><span class="o">=</span>simu.R
+<span class="nv">OUTFILE</span><span class="o">=</span>report_simu.Rout
+
+srun R CMD BATCH <span class="nv">$INFILE</span> <span class="nv">$OUTFILE</span>
+</code></pre></div></div>
+<h4 id="interpreting-the-above-bash-script">Interpreting the above <code class="highlighter-rouge">bash</code> script</h4>
+<ul>
+  <li>The first line is called a shebang or hashbang and indicate to the shell what program to interpret the script with.</li>
+  <li>Lines 2 to 8 are <code class="highlighter-rouge">slurm</code> command options. Here is a table that present these options.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command syntax</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">--job-name</code></td>
+      <td>job name</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--ntasks-per-node</code></td>
+      <td>number of nodes on which to run the job</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--cpus-per-task</code></td>
+      <td>number of CPU required per task</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--time</code></td>
+      <td>wall clock time limit</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--partition</code></td>
+      <td>partition(s) on which to run the job</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--mail-type</code></td>
+      <td>select which event types to notify the user</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--mail-type</code></td>
+      <td>user to receive email notification</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>line 10 load modules required to run <code class="highlighter-rouge">R</code>.</li>
+  <li>line 12 and 13 specify both input and output files.</li>
+  <li>line 15 run launch the execution of the task.</li>
+</ul>
+
+<p>Imagine that you create the following <code class="highlighter-rouge">R</code> script and want to run it on Baobab:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#Load libraries</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">foreach</span><span class="p">)</span><span class="w">
+
+</span><span class="c1">#Simulate population</span><span class="w">
+</span><span class="n">mysd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">15</span><span class="w">
+</span><span class="n">mymean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="w">
+</span><span class="n">pop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rnorm</span><span class="p">(</span><span class="m">10e5</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mymean</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mysd</span><span class="p">)</span><span class="w">
+
+</span><span class="c1">#Define nbr of iterations</span><span class="w">
+</span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10e3</span><span class="w">
+</span><span class="n">samplesize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="w">
+</span><span class="n">myresults</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">foreach</span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">icount</span><span class="p">(</span><span class="n">B</span><span class="p">),</span><span class="w"> </span><span class="n">.combine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rbind</span><span class="p">)</span><span class="o">%do%</span><span class="p">{</span><span class="w">
+  </span><span class="n">mysample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample</span><span class="p">(</span><span class="n">pop</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">samplesize</span><span class="p">)</span><span class="w">
+  </span><span class="n">mean</span><span class="p">(</span><span class="n">mysample</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1">#Theoretical xbar variance</span><span class="w">
+</span><span class="n">mysd</span><span class="o">^</span><span class="m">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">samplesize</span><span class="w">
+
+</span><span class="c1">#Observed xbar variance</span><span class="w">
+</span><span class="n">var</span><span class="p">(</span><span class="n">myresults</span><span class="p">[,</span><span class="m">1</span><span class="p">])</span><span class="w">
+
+</span><span class="c1">#Save results</span><span class="w">
+</span><span class="n">save</span><span class="p">(</span><span class="n">myresults</span><span class="p">,</span><span class="w"> </span><span class="s2">"xbar_simulation_results.rda"</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div></div>
+
+<p>In order to transfer it on your LINUX session, you can either write it on your computer and then transfer it on your LINUX session using for example Filezilla, or you can directly write it on your LINUX session using <code class="highlighter-rouge">vim</code>. The following command will create a <code class="highlighter-rouge">.R</code> file that you can then edit and save it using <code class="highlighter-rouge">vim</code> commands.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim simu.R
+</code></pre></div></div>
+<p>Once this <code class="highlighter-rouge">R</code> script is saved on your LINUX session as <code class="highlighter-rouge">simu.R</code>, you can then run it on Baobab by running the previously discussed <code class="highlighter-rouge">bash</code> script. Assuming that you save the above <code class="highlighter-rouge">bash</code> script as <code class="highlighter-rouge">launch_simu.sh</code>, you can launch the job with the following command.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sbatch launch_simu.sh
+</code></pre></div></div>
+<h1 id="useful-ressources">Useful ressources</h1>
+
+<ul>
+  <li><a href="https://plone.unige.ch/distic/pub/hpc/baobab_en">What is Baobab</a></li>
+  <li><a href="https://baobab.unige.ch/enduser/enduser.html">Baobab Documentation</a></li>
+  <li><a href="https://slurm.schedmd.com/">Slurm Documentation</a></li>
+  <li><a href="https://slurm.schedmd.com/SUG14/sched_tutorial.pdf">Slurm Scheduling for Optimal Responsiveness and Utilization</a></li>
+</ul>
+

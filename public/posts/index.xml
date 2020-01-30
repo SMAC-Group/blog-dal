@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Hugo Zzo Theme</title>
+    <link>http://example.org/posts/</link>
+    <description>Recent content in Posts on Hugo Zzo Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Wed, 27 Nov 2019 11:40:25 +0100</lastBuildDate>
+    
+	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>High Performance Computing - Parallel computing on Baobab</title>
+      <link>http://example.org/posts/baobab_para/</link>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/baobab_para/</guid>
+      <description>Motivation &amp;amp; Introduction Researchers at the University of Geneva may request access and use the high-performance computing (HPC) server of the University of Geneva, Baobab. This cluster is particularly well suited for massive parallel computations. There exist already different ressources to help the user that are listed at the end of this tutorial. However, the documentation already provided can be challenging to grasp for a new user. The aim of this tutorial is therefore to provide a clear and concise introduction to the use of the HPC Cluster Baobab.</description>
+    </item>
+    
+    <item>
+      <title>High Performance Computing - Baobab Hello World</title>
+      <link>http://example.org/posts/baobab_hello_world/</link>
+      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/baobab_hello_world/</guid>
+      <description>Motivation &amp;amp; Introduction Researchers at the University of Geneva may request access and use the high-performance computing (HPC) server of the University of Geneva, Baobab. This cluster is particularly well suited for massive parallel computations. There exist already different ressources to help the user that are listed at the end of this tutorial. However, the documentation already provided can be challenging to grasp for a new user. The aim of this tutorial is therefore to provide a clear and concise introduction to the use of the HPC Cluster Baobab.</description>
+    </item>
+    
+    <item>
+      <title>Post-doc presentation</title>
+      <link>http://example.org/posts/pres1/</link>
+      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/pres1/</guid>
+      <description>Hi everyone,
+We hope you enjoyed our presentation yesterday. You can find Mucyo&amp;rsquo; presentation here and Sam&#39;s here
+We are looking forward to see PhD&#39;s presentations next week 😄</description>
+    </item>
+    
+    <item>
+      <title>Agenda for research group meetings</title>
+      <link>http://example.org/posts/agenda_class/</link>
+      <pubDate>Wed, 27 Nov 2019 14:27:58 +0100</pubDate>
+      
+      <guid>http://example.org/posts/agenda_class/</guid>
+      <description>Here&#39;s our next meetings:
+   Date Time Room Content     10 Dec 2019 2:15pm to 4pm 3220 presentation by PhD student   3 Dec 2019 2:15pm to 4pm 3220 presentation by a group member   26 Nov 2019 2:15pm to 4pm 3220 presentation by a group member    </description>
+    </item>
+    
+    <item>
+      <title>A first class on asymptotics</title>
+      <link>http://example.org/posts/asymptotics1/</link>
+      <pubDate>Wed, 27 Nov 2019 12:13:57 +0100</pubDate>
+      
+      <guid>http://example.org/posts/asymptotics1/</guid>
+      <description>Hi everyone,
+Here’s the slides from the asymptotic course with some typo corrected. Also check out this video on the Hilbert’s hotel paradox we’ve mentioned today. Infinity is crazy, enjoy :) :   Wish you all a nice evening!</description>
+    </item>
+    
+  </channel>
+</rss>
