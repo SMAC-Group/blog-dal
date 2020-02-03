@@ -13,5 +13,8 @@ Hi everyone,
 [Here](https://github.com/SMAC-Group/blog-dal/raw/master/static/slides/Course_Asymptotics.pdf)’s the slides from the asymptotic course with some typo corrected. Also check out this video on the Hilbert’s hotel paradox we’ve mentioned today. Infinity is crazy, enjoy :) :
 {{< youtube Uj3_KqkI9Zo >}}
 
+Find the solutions of the exercises [here](https://github.com/SMAC-Group/blog-dal/raw/master/static/slides/solutions_asymptotic_course.pdf).
+
+
 Wish you all a nice evening!
 
