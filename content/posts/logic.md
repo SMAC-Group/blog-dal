@@ -26,3 +26,5 @@ The last one is also on the Banach-Tarski Theorem (also a bit long) but explain 
 {{< youtube fzyd02CXf-I >}}
 \
 Enjoy!
+
+Find the solutions of the exercises [here](https://github.com/SMAC-Group/blog-dal/raw/master/static/slides/solutions_logic_course.pdf).
