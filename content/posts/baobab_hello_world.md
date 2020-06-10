@@ -38,7 +38,7 @@ Before getting interested in how to run tasks on Baobab, it is necessary to defi
 |Command syntax       | Description                            |
 |---------------------| ---------------------------------------|
 |`sbatch`               | submit a job script for later execution|
-|`scontrol`             | display the slurm state of a given job |
+|`scontrol show jobid 12345`             | display the slurm state of a given job |
 |`scancel`              | cancel a running or pending job        |
 |`squeue -u username`   | display pending job of username        |
 
